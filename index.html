@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAWMAPS — Інтерактивні карти для ігор</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ШАПКА САЙТУ -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#" class="logo nav-link" data-page="page-home">
+        <span class="logo-icon">♦</span>
+        <span class="logo-text">FAWMAPS</span>
+      </a>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#" class="nav-link active" data-page="page-home">Головна</a></li>
+          <li><a href="#" class="nav-link" data-page="page-games">Ігри</a></li>
+          <li><a href="#" class="nav-link" data-page="page-editor">Редактор карт</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-profile nav-link" data-page="page-profile">👤 Профіль</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+
+    <!-- СТОРІНКА 1: ГОЛОВНА -->
+    <div id="page-home" class="page active-page">
+      <section class="hero-section">
+        <div class="hero-bg-circles"></div>
+        <div class="container hero-container">
+          <span class="hero-sub-top">ІНТЕРАКТИВНІ КАРТИ • СТВОРЕНІ ГРАВЦЯМИ</span>
+          <h1 class="hero-title">Кожна гра —<br>власний атлас.</h1>
+          <p class="hero-description">Знайди свою гру серед ПК, консольних та мобільних тайтлів<br>і відкрий її інтерактивну карту.</p>
+        </div>
+      </section>
+
+      <section class="popular-games-section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-tag-mini">ОБИРАЙ СВІЙ СВІТ</span>
+              <h2 class="section-title">Популярні ігри</h2>
+            </div>
+            <a href="#" class="games-count nav-link" data-page="page-games" id="all-games-count-btn">8 карт • Усі</a>
+          </div>
+
+          <div class="advanced-search-panel">
+            <input type="text" id="game-filter-name" placeholder="Пошук за назвою...">
+            <select id="filter-platform">
+              <option value="">Усі платформи</option>
+              <option value="ПК">ПК</option>
+              <option value="PlayStation">PlayStation</option>
+              <option value="Xbox">Xbox</option>
+              <option value="Switch">Switch</option>
+              <option value="Мобільні">Мобільні</option>
+            </select>
+            <select id="filter-genre">
+              <option value="">Усі жанри</option>
+              <option value="ACTION RPG">Action RPG</option>
+              <option value="RPG">RPG</option>
+              <option value="ШУТЕР">Шутер</option>
+              <option value="ПРИГОДИ">Пригоди</option>
+              <option value="METROIDVANIA">Metroidvania</option>
+              <option value="BATTLE ROYALE">Battle Royale</option>
+            </select>
+            <select id="sort-popularity">
+              <option value="default">Сортування</option>
+              <option value="asc">Популярність (від низької)</option>
+              <option value="desc">Популярність (від високої)</option>
+            </select>
+          </div>
+
+          <div class="games-grid" id="main-games-grid">
+            <article class="game-card card-fortnite" data-title="Fortnite" data-genre="BATTLE ROYALE" data-platforms="Усі платформи" data-pop="98" data-desc="Королівська битва.">
+              <div class="game-card-content"><h3>Fortnite</h3><span class="game-genre">BATTLE ROYALE</span></div>
+            </article>
+            <article class="game-card card-elden-ring" data-title="Elden Ring" data-genre="ACTION RPG" data-platforms="ПК, PlayStation, Xbox" data-pop="95" data-desc="Відкритий світ Міжзем'я: благодать, боси та предмети.">
+              <div class="game-card-content"><h3>Elden Ring</h3><span class="game-genre">ACTION RPG</span></div>
+            </article>
+            <article class="game-card card-rdr2" data-title="Red Dead Redemption 2" data-genre="ПРИГОДИ" data-platforms="ПК, PlayStation, Xbox" data-pop="92" data-desc="Дикий Захід на межі епох.">
+              <div class="game-card-content"><h3>Red Dead Redemption 2</h3><span class="game-genre">ПРИГОДИ</span></div>
+            </article>
+            <article class="game-card card-witcher" data-title="The Witcher 3" data-genre="RPG" data-platforms="ПК, PlayStation, Xbox, Switch" data-pop="90" data-desc="Епічна пригода відьмака Геральта у відкритому світі.">
+              <div class="game-card-content"><h3>The Witcher 3</h3><span class="game-genre">RPG</span></div>
+            </article>
+            <article class="game-card card-stalker" data-title="S.T.A.L.K.E.R. 2" data-genre="ШУТЕР" data-platforms="ПК, Xbox" data-pop="88" data-desc="Зона відчуження чекає на нового героя.">
+              <div class="game-card-content"><h3>S.T.A.L.K.E.R. 2</h3><span class="game-genre">ШУТЕР • ВИЖИВАННЯ</span></div>
+            </article>
+            <article class="game-card card-cyberpunk" data-title="Cyberpunk 2077" data-genre="ACTION RPG" data-platforms="ПК, PlayStation, Xbox" data-pop="85" data-desc="Найт-Сіті: мегаполіс майбутнього.">
+              <div class="game-card-content"><h3>Cyberpunk 2077</h3><span class="game-genre">ACTION RPG</span></div>
+            </article>
+            <article class="game-card card-genshin" data-title="Genshin Impact" data-genre="RPG" data-platforms="ПК, PlayStation, Мобільні, Switch" data-pop="80" data-desc="Магічний світ Тейват.">
+              <div class="game-card-content"><h3>Genshin Impact</h3><span class="game-genre">GACHA RPG</span></div>
+            </article>
+            <article class="game-card card-hollow" data-title="Hollow Knight" data-genre="METROIDVANIA" data-platforms="ПК, PlayStation, Xbox, Switch" data-pop="75" data-desc="Підземне королівство комах.">
+              <div class="game-card-content"><h3>Hollow Knight</h3><span class="game-genre">METROIDVANIA</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-orange-section">
+        <div class="container cta-orange-container">
+          <div>
+            <span class="cta-mini-tag">МАЙСТЕРНЯ КАРТОГРАФА</span>
+            <h2>Створи карту для своєї гри</h2>
+            <p>Додавай локації, предмети, босів і власні маркери. Поділися картою зі спільнотою.</p>
+          </div>
+          <button class="btn btn-cta-light nav-link" data-page="page-editor">✏ Відкрити редактор</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- СТОРІНКА 2: ІГРИ -->
+    <div id="page-games" class="page">
+      <div id="games-catalog-view" class="container catalog-padding">
+        <div class="section-header">
+          <div>
+            <span class="section-tag-mini">КАТАЛОГ ТАЙТЛІВ</span>
+            <h2 class="section-title">Усі ігри та карти</h2>
+          </div>
+          <span class="games-count">Усі 8 доступних ігор каталогу</span>
+        </div>
+
+        <div class="games-grid">
+          <article class="game-card card-fortnite" data-title="Fortnite" data-genre="BATTLE ROYALE" data-platforms="Усі платформи" data-desc="Королівська битва.">
+            <div class="game-card-content"><h3>Fortnite</h3><span class="game-genre">BATTLE ROYALE</span></div>
+          </article>
+          <article class="game-card card-elden-ring" data-title="Elden Ring" data-genre="ACTION RPG" data-platforms="ПК, PlayStation, Xbox" data-desc="Відкритий світ Міжзем'я: благодать, боси та предмети.">
+            <div class="game-card-content"><h3>Elden Ring</h3><span class="game-genre">ACTION RPG</span></div>
+          </article>
+          <article class="game-card card-rdr2" data-title="Red Dead Redemption 2" data-genre="ПРИГОДИ" data-platforms="ПК, PlayStation, Xbox" data-desc="Дикий Захід на межі епох.">
+            <div class="game-card-content"><h3>Red Dead Redemption 2</h3><span class="game-genre">ПРИГОДИ</span></div>
+          </article>
+          <article class="game-card card-witcher" data-title="The Witcher 3" data-genre="RPG" data-platforms="ПК, PlayStation, Xbox, Switch" data-desc="Епічна пригода відьмака Геральта у відкритому світі.">
+            <div class="game-card-content"><h3>The Witcher 3</h3><span class="game-genre">RPG</span></div>
+          </article>
+          <article class="game-card card-stalker" data-title="S.T.A.L.K.E.R. 2" data-genre="ШУТЕР • ВИЖИВАННЯ" data-platforms="ПК, Xbox" data-desc="Зона відчуження чекає на нового героя.">
+            <div class="game-card-content"><h3>S.T.A.L.K.E.R. 2</h3><span class="game-genre">ШУТЕР • ВИЖИВАННЯ</span></div>
+          </article>
+          <article class="game-card card-cyberpunk" data-title="Cyberpunk 2077" data-genre="ACTION RPG" data-platforms="ПК, PlayStation, Xbox" data-desc="Найт-Сіті: мегаполіс майбутнього.">
+            <div class="game-card-content"><h3>Cyberpunk 2077</h3><span class="game-genre">ACTION RPG</span></div>
+          </article>
+          <article class="game-card card-genshin" data-title="Genshin Impact" data-genre="GACHA RPG" data-platforms="ПК, PlayStation, Mobile, Switch" data-desc="Магічний світ Тейват.">
+            <div class="game-card-content"><h3>Genshin Impact</h3><span class="game-genre">GACHA RPG</span></div>
+          </article>
+          <article class="game-card card-hollow" data-title="Hollow Knight" data-genre="METROIDVANIA" data-platforms="ПК, PlayStation, Xbox, Switch" data-desc="Підземне королівство комах.">
+            <div class="game-card-content"><h3>Hollow Knight</h3><span class="game-genre">METROIDVANIA</span></div>
+          </article>
+        </div>
+      </div>
+
+      <div id="game-single-view" class="container single-view-padding">
+        <button class="btn btn-secondary" id="back-to-games-btn">← Назад до списку ігор</button>
+        <div class="game-hero-banner">
+          <span class="section-tag-mini" id="det-game-genre">ACTION RPG • 2022</span>
+          <h2 id="det-game-title">Назва гри</h2>
+          <div class="platform-tags" id="det-game-platforms"><span>ПК</span></div>
+          <p id="det-game-desc">Опис гри...</p>
+        </div>
+
+        <div class="community-map-container">
+          <div class="map-header-bar">
+            <div>
+              <span class="section-tag-mini">КАРТИ СПІЛЬНОТИ</span>
+              <h3>Інтерактивний атлас</h3>
+            </div>
+          </div>
+          <p class="map-placeholder-text">Тут згодом з'являтимуться карти, створені гравцями.</p>
+        </div>
+
+        <div class="reviews-section">
+          <div class="reviews-grid">
+            <div class="reviews-list-block">
+              <h3>Відгуки гравців</h3>
+              <div class="reviews-list" id="dynamic-reviews-list"></div>
+            </div>
+
+            <div class="review-form-card">
+              <span class="section-tag-mini">ТВОЯ ДУМКА ВАЖЛИВА</span>
+              <h3>Залишити відгук</h3>
+              <form class="review-form" id="review-submit-form">
+                <div class="form-group">
+                  <label for="review-msg">ВІДГУК</label>
+                  <textarea id="review-msg" rows="4" required placeholder="Що тобі сподобалось у цій карті?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">➔ Опублікувати</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- СТОРІНКА 3: РЕДАКТОР КАРТ -->
+    <div id="page-editor" class="page">
+      <div id="editor-step-upload" class="container editor-upload-container">
+        <div class="editor-upload-card">
+          <span class="editor-step-tag">КРОК 1 З 2 • ОСНОВА КАРТИ</span>
+          <h2 class="editor-upload-title">Завантаж зображення карти</h2>
+          <p class="editor-upload-desc">Це буде полотно, на якому ти розміщуватимеш маркери та іконки.</p>
+          
+          <div class="file-dropzone" id="file-dropzone-box" onclick="document.getElementById('map-bg-file-input').click()">
+            <div class="dropzone-icon">➕</div>
+            <strong>Обрати файл</strong>
+            <p class="dropzone-sub">PNG, JPG або WEBP • до 12 МБ</p>
+            <input type="file" id="map-bg-file-input" accept="image/*" style="display: none;">
+          </div>
+
+          <div class="editor-tip-box">
+            <strong>Порада</strong><br>Використовуй зображення високої якості без зайвих написів. Рекомендований розмір — від 1600 × 900 px.
+          </div>
+
+          <button class="btn btn-secondary" id="use-demo-map-btn">або спробувати з демонстраційною картою →</button>
+        </div>
+      </div>
+
+      <div id="editor-step-canvas" class="container editor-canvas-container">
+        <div class="editor-top-bar">
+          <div class="editor-title-group">
+            <input type="text" id="map-title-input" value="Моя перша карта">
+            <span id="zoom-level-indicator">Масштаб: 100%</span>
+          </div>
+          <div class="editor-actions">
+            <button class="btn btn-secondary" id="change-bg-btn">🖼 Змінити карту</button>
+            <button class="btn btn-primary" id="publish-map-btn">➔ Опублікувати</button>
+          </div>
+        </div>
+
+        <div class="editor-workspace">
+          <!-- Панель Інструменти міток + Легенда Карти -->
+          <div class="editor-sidebar">
+            <h4 class="sidebar-title">ІНСТРУМЕНТИ МІТОК</h4>
+            <p class="sidebar-sub">Оберіть категорію, завантажте фото для мітки та клікніть на карту.</p>
+            
+            <div class="form-group">
+              <label class="sidebar-label">Фото всередині мітки:</label>
+              <input type="file" id="custom-marker-photo" accept="image/*">
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <!-- ЛЕГЕНДА КАРТИ ТА КАТЕГОРІЇ -->
+            <div class="legend-block">
+              <div class="legend-header">
+                <h4>ЛЕГЕНДА КАРТИ</h4>
+                <button type="button" class="btn-add-cat" id="open-add-category-btn">+ Додати категорію</button>
+              </div>
+
+              <div id="add-category-form" class="add-cat-box" style="display: none;">
+                <input type="text" id="new-cat-name" placeholder="Назва категорії..." class="modal-input">
+                <div class="cat-color-picker">
+                  <span>Колір:</span>
+                  <input type="color" id="new-cat-color" value="#FF5A36">
+                </div>
+                <button type="button" class="btn btn-primary btn-full" id="save-cat-btn" style="padding: 6px; font-size: 0.8rem;">Зберегти категорію</button>
+              </div>
+
+              <div class="categories-list" id="categories-list-container"></div>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <div class="zoom-controls-block">
+              <h4 class="sidebar-title">Масштабування:</h4>
+              <div class="zoom-buttons">
+                <button class="btn btn-secondary" id="zoom-in-btn">+</button>
+                <button class="btn btn-secondary" id="zoom-out-btn">-</button>
+                <button class="btn btn-secondary" id="zoom-reset-btn">Скинути</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="editor-map-canvas-wrapper" id="canvas-viewport">
+            <div id="map-transform-layer">
+              <img id="active-map-image" src="" alt="Карта">
+              <div id="markers-layer"></div>
+            </div>
+            <div class="canvas-help-hint">
+              Затисніть ліву кнопку миші для перетягування • Клікніть, щоб поставити мітку
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- СТОРІНКА 5: РЕЖИМ ПЕРЕГЛЯДУ КАРТИ (З ЛЕГЕНДОЮ СПРАВА) -->
+    <div id="page-viewer" class="page">
+      <div class="container viewer-container">
+        <div class="viewer-top-bar">
+          <button class="btn btn-secondary" id="back-to-profile-from-viewer">← Назад до профілю</button>
+          <h2 id="viewer-map-title" style="font-family: var(--font-heading); font-size: 1.5rem;">Назва карти</h2>
+          <button class="btn btn-primary" id="open-in-editor-from-viewer">✏ Редагувати карту</button>
+        </div>
+
+        <div class="editor-workspace">
+          <!-- Бокова панель легенди в режимі перегляду -->
+          <div class="editor-sidebar">
+            <h4 class="sidebar-title">ЛЕГЕНДА КАРТИ</h4>
+            <p class="sidebar-sub">Керуйте видимістю категорій маркерів на карті.</p>
+            <div class="categories-list" id="viewer-categories-list"></div>
+          </div>
+
+          <!-- Полотно карти -->
+          <div class="editor-map-canvas-wrapper" id="viewer-viewport">
+            <div id="viewer-transform-layer">
+              <img id="viewer-map-image" src="" alt="Карта">
+              <div id="viewer-markers-layer"></div>
+            </div>
+            <div class="canvas-help-hint">
+              Режим перегляду • Затисніть ліву кнопку миші для перетягування карти
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- СТОРІНКА 4: ПРОФІЛЬ -->
+    <div id="page-profile" class="page">
+      <div class="container profile-container">
+        
+        <!-- СЕКЦІЯ 1: АВТОРИЗАЦІЯ / РЕЄСТРАЦІЯ -->
+        <section id="profile-auth-section" class="auth-section">
+          <div class="hero-bg-circles" style="opacity: 0.3;"></div>
+          <div class="auth-grid">
+            <div class="auth-info">
+              <span class="section-tag-mini">01 • ДОСТУП ДО АТЛАСУ</span>
+              <h2>Приєднуйся до спільноти</h2>
+              <ul class="benefits-list">
+                <li>◆ Зберігай улюблені ігри та карти</li>
+                <li>◆ Створюй і публікуй власні атласи</li>
+                <li>◆ Підключай Steam, Epic, PSN і Discord</li>
+              </ul>
+            </div>
+
+            <div class="auth-card">
+              <div class="auth-tabs" role="tablist">
+                <button role="tab" class="auth-tab" data-auth-tab="reg">Реєстрація</button>
+                <button role="tab" class="auth-tab active" data-auth-tab="login">Вхід</button>
+              </div>
+              <form class="auth-form" id="auth-form-element">
+                <div class="form-group">
+                  <label for="email">EMAIL</label>
+                  <input type="email" id="email" required placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                  <label for="password">ПАРОЛЬ</label>
+                  <input type="password" id="password" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" id="auth-submit-btn">➔ Увійти</button>
+              </form>
+              <p class="demo-notice">Демо-режим: дані зберігаються лише в цьому браузері.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- СЕКЦІЯ 2: ПОВНИЙ ПРОФІЛЬ -->
+        <section id="profile-content-section" class="profile-section">
+          <div class="profile-header-card" id="profile-header-box">
+            <div class="profile-banner" id="profile-banner-bg"></div>
+            <div class="profile-user-info">
+              <div class="avatar-circle" id="profile-avatar-box">Ти</div>
+              <div class="profile-details">
+                <span class="section-tag-mini" id="profile-status-tag">ПРОФІЛЬ</span>
+                <h2 id="profile-username-heading">Додай своє ім'я</h2>
+                <p id="profile-bio-desc">Розкажи спільноті про себе та улюблені світи.</p>
+              </div>
+              <div class="profile-actions-top">
+                <button class="btn btn-secondary" id="open-edit-profile-modal">✏ Змінити профіль</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-body-grid">
+            <aside class="profile-sidebar">
+              <div class="widget">
+                <span class="widget-tag">ПРО МЕНЕ</span>
+                <p id="sidebar-bio-text">Поки що тут порожньо. Заповни профіль, щоб інші картографи дізналися про тебе.</p>
+              </div>
+              <div class="widget stats-widget">
+                <div class="stat-item"><strong id="stat-maps-count">0</strong><span>карт</span></div>
+                <div class="stat-item"><strong>0</strong><span>міток</span></div>
+                <div class="stat-item"><strong>0</strong><span>вподобань</span></div>
+              </div>
+              <div class="widget">
+                <span class="widget-tag">ІГРОВІ СЕРВІСИ</span>
+                <div id="sidebar-services-container">
+                  <p id="sidebar-services-text">Жодного сервісу не підключено.</p>
+                </div>
+                <button class="btn btn-dashed" id="connect-service-btn">+ Підключити сервіс</button>
+              </div>
+              <button class="btn btn-logout" id="logout-btn">Вийти з профілю</button>
+            </aside>
+
+            <div class="profile-content">
+              <nav class="profile-tabs" role="tablist">
+                <button class="profile-tab active">Мої карти</button>
+              </nav>
+
+              <div id="user-published-maps-container">
+                <div class="empty-state-card" id="profile-empty-card">
+                  <div class="empty-icon">🗺️</div>
+                  <h3>Тут з'являться твої карти</h3>
+                  <p>Завантаж зображення світу й почни розміщувати маркери.</p>
+                  <button class="btn btn-primary" id="profile-create-first-map-btn">+ Створити першу карту</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- МОДАЛЬНЕ ВІКНО ПЕРСОНАЛІЗАЦІЇ ПРОФІЛЮ -->
+      <div id="edit-profile-modal" class="modal-backdrop">
+        <div class="modal-card">
+          <div class="modal-header">
+            <span class="modal-subtitle">ПЕРСОНАЛІЗАЦІЯ</span>
+            <button type="button" id="close-modal-btn" class="modal-close-btn">✕</button>
+          </div>
+          
+          <h2 class="modal-title">Твій профіль</h2>
+          
+          <form id="edit-profile-form">
+            <div class="form-group">
+              <label class="modal-label">АВАТАР</label>
+              <div class="avatar-upload-row">
+                <div id="modal-avatar-preview" class="avatar-preview-box">Ти</div>
+                <button type="button" class="btn btn-secondary modal-upload-btn" onclick="document.getElementById('modal-avatar-file').click()">+ Завантажити зображення</button>
+                <input type="file" id="modal-avatar-file" accept="image/*" style="display: none;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">НІКНЕЙМ</label>
+              <input type="text" id="modal-name-input" class="modal-input" placeholder="Наприклад, atlas_maker">
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">КОРОТКО ПРО СЕБЕ</label>
+              <textarea id="modal-bio-input" class="modal-textarea" rows="3" placeholder="Улюблені жанри, ігри та досвід..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">МОНОГРАМА</label>
+              <input type="text" id="modal-monogram-input" class="modal-input" maxlength="3" placeholder="АК">
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">УЛЮБЛЕНІ ІГРИ</label>
+              <div class="tags-group" id="group-favorite-games">
+                <button type="button" class="tag-toggle-btn" data-tag="Elden Ring">Elden Ring</button>
+                <button type="button" class="tag-toggle-btn" data-tag="The Witcher 3">The Witcher 3</button>
+                <button type="button" class="tag-toggle-btn" data-tag="S.T.A.L.K.E.R. 2">S.T.A.L.K.E.R. 2</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Cyberpunk 2077">Cyberpunk 2077</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Genshin Impact">Genshin Impact</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Red Dead Redemption 2">Red Dead Redemption 2</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">ТЕМИ ТА ВПОДОБАННЯ</label>
+              <div class="tags-group" id="group-topics">
+                <button type="button" class="tag-toggle-btn" data-tag="Відкритий світ">Відкритий світ</button>
+                <button type="button" class="tag-toggle-btn" data-tag="RPG">RPG</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Кооператив">Кооператив</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Секрети">Секрети</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Спідрани">Спідрани</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">ІГРОВІ СЕРВІСИ</label>
+              <div class="tags-group" id="group-services">
+                <button type="button" class="tag-toggle-btn" data-tag="Steam">Steam</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Epic Games">Epic Games</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Xbox">Xbox</button>
+                <button type="button" class="tag-toggle-btn" data-tag="PSN">PSN</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Ubisoft">Ubisoft</button>
+                <button type="button" class="tag-toggle-btn" data-tag="Discord">Discord</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="modal-label">АКЦЕНТНИЙ КОЛІР</label>
+              <div class="color-picker-row">
+                <div class="color-dot active" data-color="#FF5A36" style="background: #FF5A36;"></div>
+                <div class="color-dot" data-color="#84CC16" style="background: #84CC16;"></div>
+                <div class="color-dot" data-color="#3B82F6" style="background: #3B82F6;"></div>
+                <div class="color-dot" data-color="#94A3B8" style="background: #94A3B8;"></div>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 25px;">
+              <label class="modal-label">ОБКЛАДИНКА</label>
+              <div class="banner-picker-row">
+                <div class="banner-box active" data-banner="linear-gradient(135deg, #1A4D3E, #2F594C)" style="background: linear-gradient(135deg, #1A4D3E, #2F594C);"></div>
+                <div class="banner-box" data-banner="linear-gradient(135deg, #C2410C, #9A3412)" style="background: linear-gradient(135deg, #C2410C, #9A3412);"></div>
+                <div class="banner-box" data-banner="linear-gradient(135deg, #312E81, #1E1B4B)" style="background: linear-gradient(135deg, #312E81, #1E1B4B);"></div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-save-modal btn-full">✓ Зберегти зміни</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo nav-link" data-page="page-home">
+          <span class="logo-icon">♦</span>
+          <span class="logo-text">FAWMAPS</span>
+        </a>
+        <p>Спільнота геймерів і каталог інтерактивних карт для будь-якої платформи.</p>
+        <span class="lang-tag">УКРАЇНСЬКОЮ • UA</span>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>РОЗДІЛИ</h4>
+          <ul>
+            <li><a href="#" class="nav-link" data-page="page-home">Пошук ігор</a></li>
+            <li><a href="#" class="nav-link" data-page="page-games">Ігри</a></li>
+            <li><a href="#" class="nav-link" data-page="page-editor">Редактор мап</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>АКАУНТ</h4>
+          <ul>
+            <li><a href="#" class="nav-link" data-page="page-profile">Профіль</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // НАВІГАЦІЯ SPA
+      const navLinks = document.querySelectorAll(".nav-link");
+      const pages = document.querySelectorAll(".page");
+
+      function showPage(pageId) {
+        pages.forEach(p => p.classList.remove("active-page"));
+        const targetPage = document.getElementById(pageId);
+        if (targetPage) {
+          targetPage.classList.add("active-page");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        navLinks.forEach(l => {
+          if (l.getAttribute("data-page") === pageId) {
+            l.classList.add("active");
+          } else {
+            l.classList.remove("active");
+          }
+        });
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const pageId = link.getAttribute("data-page");
+          if (pageId) {
+            if (pageId === 'page-games') {
+              document.getElementById('games-catalog-view').style.display = 'block';
+              document.getElementById('game-single-view').style.display = 'none';
+            }
+            if (pageId === 'page-editor') {
+              openEditorStepUpload();
+            }
+            showPage(pageId);
+          }
+        });
+      });
+
+      function openEditorStepUpload() {
+        document.getElementById('editor-step-upload').style.display = 'block';
+        document.getElementById('editor-step-canvas').style.display = 'none';
+      }
+
+      const profileCreateFirstBtn = document.getElementById("profile-create-first-map-btn");
+      if (profileCreateFirstBtn) {
+        profileCreateFirstBtn.addEventListener("click", () => {
+          openEditorStepUpload();
+          showPage("page-editor");
+        });
+      }
+
+      const allGamesCountBtn = document.getElementById("all-games-count-btn");
+      if (allGamesCountBtn) {
+        allGamesCountBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          showPage("page-games");
+          document.getElementById('games-catalog-view').style.display = 'block';
+          document.getElementById('game-single-view').style.display = 'none';
+        });
+      }
+
+      // ФІЛЬТРАЦІЯ ТА ПОШУК ІГОР
+      const searchInput = document.getElementById("game-filter-name");
+      const platformSelect = document.getElementById("filter-platform");
+      const genreSelect = document.getElementById("filter-genre");
+      const sortSelect = document.getElementById("sort-popularity");
+      const gamesGrid = document.getElementById("main-games-grid");
+
+      function filterAndSortGames() {
+        if (!gamesGrid) return;
+        const cards = Array.from(gamesGrid.querySelectorAll(".game-card"));
+        const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+        const selectedPlatform = platformSelect ? platformSelect.value : "";
+        const selectedGenre = genreSelect ? genreSelect.value : "";
+        const sortVal = sortSelect ? sortSelect.value : "default";
+
+        cards.forEach(card => {
+          const title = card.getAttribute("data-title").toLowerCase();
+          const genre = card.getAttribute("data-genre");
+          const platforms = card.getAttribute("data-platforms");
+
+          const matchesName = title.includes(query);
+          const matchesPlatform = !selectedPlatform || platforms.includes(selectedPlatform);
+          const matchesGenre = !selectedGenre || genre.includes(selectedGenre);
+
+          if (matchesName && matchesPlatform && matchesGenre) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        if (sortVal !== "default") {
+          cards.sort((a, b) => {
+            const popA = parseInt(a.getAttribute("data-pop")) || 0;
+            const popB = parseInt(b.getAttribute("data-pop")) || 0;
+            return sortVal === "asc" ? popA - popB : popB - popA;
+          });
+          cards.forEach(card => gamesGrid.appendChild(card));
+        }
+      }
+
+      if (searchInput && platformSelect && genreSelect && sortSelect) {
+        searchInput.addEventListener("input", filterAndSortGames);
+        platformSelect.addEventListener("change", filterAndSortGames);
+        genreSelect.addEventListener("change", filterAndSortGames);
+        sortSelect.addEventListener("change", filterAndSortGames);
+      }
+
+      // КЛІК ПО КАРТЦІ ГРИ
+      const gameCards = document.querySelectorAll(".game-card");
+      const catalogView = document.getElementById("games-catalog-view");
+      const singleView = document.getElementById("game-single-view");
+
+      gameCards.forEach(card => {
+        card.addEventListener("click", () => {
+          const title = card.getAttribute("data-title");
+          const genre = card.getAttribute("data-genre");
+          const platforms = card.getAttribute("data-platforms");
+          const desc = card.getAttribute("data-desc");
+
+          document.getElementById("det-game-title").textContent = title;
+          document.getElementById("det-game-genre").textContent = genre;
+          document.getElementById("det-game-desc").textContent = desc;
+
+          const platContainer = document.getElementById("det-game-platforms");
+          platContainer.innerHTML = "";
+          platforms.split(", ").forEach(p => {
+            const span = document.createElement("span");
+            span.textContent = p;
+            platContainer.appendChild(span);
+          });
+
+          showPage("page-games");
+          if (catalogView) catalogView.style.display = "none";
+          if (singleView) singleView.style.display = "block";
+        });
+      });
+
+      const backBtn = document.getElementById("back-to-games-btn");
+      if (backBtn) {
+        backBtn.addEventListener("click", () => {
+          if (singleView) singleView.style.display = "none";
+          if (catalogView) catalogView.style.display = "block";
+        });
+      }
+
+      // ЛОГІКА АВТОРИЗАЦІЇ ТА ПРОФІЛЮ
+      const authForm = document.getElementById("auth-form-element");
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      const authTabs = document.querySelectorAll(".auth-tab");
+      const authSubmitBtn = document.getElementById("auth-submit-btn");
+      const profileAuthSection = document.getElementById("profile-auth-section");
+      const profileContentSection = document.getElementById("profile-content-section");
+      let isReg = false;
+
+      authTabs.forEach(tab => {
+        tab.addEventListener("click", (e) => {
+          e.preventDefault();
+          authTabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          if (tab.getAttribute("data-auth-tab") === "reg") {
+            isReg = true;
+            authSubmitBtn.textContent = "➔ Зареєструватися";
+          } else {
+            isReg = false;
+            authSubmitBtn.textContent = "➔ Увійти";
+          }
+        });
+      });
+
+      const currentUser = localStorage.getItem("fawmaps_current_user");
+      if (currentUser) {
+        profileAuthSection.style.display = "none";
+        profileContentSection.style.display = "block";
+        loadUserData(currentUser);
+      } else {
+        profileAuthSection.style.display = "block";
+        profileContentSection.style.display = "none";
+      }
+
+      authForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+        const users = JSON.parse(localStorage.getItem("fawmaps_users")) || {};
+
+        if (isReg) {
+          if (users[email]) {
+            alert("Користувач із такою поштою вже існує!");
+            return;
+          }
+          users[email] = { 
+            password: password, 
+            name: email.split("@")[0], 
+            bio: "Розкажи про себе...", 
+            monogram: email.split("@")[0].substring(0, 2).toUpperCase(),
+            avatar: "", 
+            banner: "linear-gradient(135deg, #1A4D3E, #2F594C)", 
+            accent: "#FF5A36",
+            games: [],
+            topics: [],
+            services: []
+          };
+          localStorage.setItem("fawmaps_users", JSON.stringify(users));
+          localStorage.setItem("fawmaps_current_user", email);
+        } else {
+          if (!users[email] || users[email].password !== password) {
+            alert("Невірний email або пароль!");
+            return;
+          }
+          localStorage.setItem("fawmaps_current_user", email);
+        }
+
+        loadUserData(email);
+        authForm.reset();
+        profileAuthSection.style.display = "none";
+        profileContentSection.style.display = "block";
+        showPage("page-profile");
+      });
+
+      document.getElementById("logout-btn").addEventListener("click", () => {
+        localStorage.removeItem("fawmaps_current_user");
+        clearUserUI();
+        alert("Ви вийшли з профілю.");
+        profileContentSection.style.display = "none";
+        profileAuthSection.style.display = "block";
+        showPage("page-profile");
+      });
+
+      function loadUserData(email) {
+        const users = JSON.parse(localStorage.getItem("fawmaps_users")) || {};
+        const user = users[email] || { 
+          name: email.split("@")[0], 
+          bio: `Авторизовано як: ${email}`, 
+          monogram: "ТИ",
+          banner: "linear-gradient(135deg, #1A4D3E, #2F594C)",
+          accent: "#FF5A36",
+          services: []
+        };
+
+        document.getElementById("profile-username-heading").textContent = user.name || "Додай своє ім'я";
+        document.getElementById("profile-bio-desc").textContent = user.bio || "Розкажи спільноті про себе та улюблені світи.";
+        document.getElementById("sidebar-bio-text").textContent = user.bio || "Поки що тут порожньо. Заповни профіль, щоб інші картографи дізналися про тебе.";
+        document.getElementById("profile-banner-bg").style.background = user.banner || "linear-gradient(135deg, #1A4D3E, #2F594C)";
+
+        const avatarBox = document.getElementById("profile-avatar-box");
+        const accentColor = user.accent || "#FF5A36";
+        avatarBox.style.backgroundColor = accentColor;
+
+        if (user.avatar) {
+          avatarBox.innerHTML = `<img src="${user.avatar}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">`;
+        } else {
+          avatarBox.textContent = user.monogram || (user.name ? user.name.substring(0, 2).toUpperCase() : "ТИ");
+        }
+
+        const servicesContainer = document.getElementById("sidebar-services-container");
+        if (user.services && user.services.length > 0) {
+          servicesContainer.innerHTML = `<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px;">` + 
+            user.services.map(s => `<span style="background: #FFF; border: 1px solid #D8D0C0; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; color: #1C2421; font-weight: 500;">${s}</span>`).join('') + 
+            `</div>`;
+        } else {
+          servicesContainer.innerHTML = `<p id="sidebar-services-text" style="font-size: 0.85rem; color: #6C7A73;">Жодного сервісу не підключено.</p>`;
+        }
+
+        loadUserMaps(email);
+      }
+
+      function clearUserUI() {
+        document.getElementById("profile-username-heading").textContent = "Додай своє ім'я";
+        document.getElementById("profile-bio-desc").textContent = "Розкажи спільноті про себе та улюблені світи.";
+        document.getElementById("sidebar-bio-text").textContent = "Поки що тут порожньо. Заповни профіль, щоб інші картографи дізналися про тебе.";
+        document.getElementById("profile-avatar-box").textContent = "Ти";
+        document.getElementById("profile-avatar-box").style.backgroundColor = "#FF5A36";
+        document.getElementById("sidebar-services-container").innerHTML = `<p id="sidebar-services-text" style="font-size: 0.85rem; color: #6C7A73;">Жодного сервісу не підключено.</p>`;
+      }
+
+      const connectServiceBtn = document.getElementById("connect-service-btn");
+      if (connectServiceBtn) {
+        connectServiceBtn.addEventListener("click", () => {
+          document.getElementById("open-edit-profile-modal").click();
+        });
+      }
+
+      // МОДАЛЬНЕ ВІКНО ПЕРСОНАЛІЗАЦІЇ ПРОФІЛЮ
+      const editModal = document.getElementById("edit-profile-modal");
+      let tempAvatarBase64 = "";
+      let selectedAccentColor = "#FF5A36";
+      let selectedBannerGradient = "linear-gradient(135deg, #1A4D3E, #2F594C)";
+
+      document.getElementById("open-edit-profile-modal").addEventListener("click", () => {
+        const currentEmail = localStorage.getItem("fawmaps_current_user");
+        if (!currentEmail) {
+          alert("Будь ласка, увійдіть у профіль!");
+          return;
+        }
+        const users = JSON.parse(localStorage.getItem("fawmaps_users")) || {};
+        const user = users[currentEmail] || {};
+
+        document.getElementById("modal-name-input").value = user.name || "";
+        document.getElementById("modal-bio-input").value = user.bio || "";
+        document.getElementById("modal-monogram-input").value = user.monogram || (user.name ? user.name.substring(0, 2).toUpperCase() : "АК");
+
+        const modalAvatarPreview = document.getElementById("modal-avatar-preview");
+        if (user.avatar) {
+          tempAvatarBase64 = user.avatar;
+          modalAvatarPreview.innerHTML = `<img src="${user.avatar}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">`;
+        } else {
+          tempAvatarBase64 = "";
+          modalAvatarPreview.textContent = user.monogram || "Ти";
+        }
+
+        document.querySelectorAll(".tag-toggle-btn").forEach(btn => {
+          const tag = btn.getAttribute("data-tag");
+          const parentId = btn.parentElement.id;
+          if (parentId === 'group-favorite-games' && user.games && user.games.includes(tag)) {
+            btn.classList.add("active");
+          } else if (parentId === 'group-topics' && user.topics && user.topics.includes(tag)) {
+            btn.classList.add("active");
+          } else if (parentId === 'group-services' && user.services && user.services.includes(tag)) {
+            btn.classList.add("active");
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+
+        selectedAccentColor = user.accent || "#FF5A36";
+        document.querySelectorAll(".color-dot").forEach(dot => {
+          if (dot.getAttribute("data-color") === selectedAccentColor) {
+            dot.classList.add("active");
+          } else {
+            dot.classList.remove("active");
+          }
+        });
+
+        selectedBannerGradient = user.banner || "linear-gradient(135deg, #1A4D3E, #2F594C)";
+        document.querySelectorAll(".banner-box").forEach(box => {
+          if (box.getAttribute("data-banner") === selectedBannerGradient) {
+            box.classList.add("active");
+          } else {
+            box.classList.remove("active");
+          }
+        });
+
+        editModal.style.display = "flex";
+      });
+
+      document.getElementById("close-modal-btn").addEventListener("click", () => {
+        editModal.style.display = "none";
+      });
+
+      document.querySelectorAll(".tag-toggle-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+        });
+      });
+
+      document.querySelectorAll(".color-dot").forEach(dot => {
+        dot.addEventListener("click", () => {
+          document.querySelectorAll(".color-dot").forEach(d => d.classList.remove("active"));
+          dot.classList.add("active");
+          selectedAccentColor = dot.getAttribute("data-color");
+        });
+      });
+
+      document.querySelectorAll(".banner-box").forEach(box => {
+        box.addEventListener("click", () => {
+          document.querySelectorAll(".banner-box").forEach(b => b.classList.remove("active"));
+          box.classList.add("active");
+          selectedBannerGradient = box.getAttribute("data-banner");
+        });
+      });
+
+      const modalAvatarFile = document.getElementById("modal-avatar-file");
+      modalAvatarFile.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            tempAvatarBase64 = ev.target.result;
+            document.getElementById("modal-avatar-preview").innerHTML = `<img src="${tempAvatarBase64}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">`;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      document.getElementById("edit-profile-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const currentEmail = localStorage.getItem("fawmaps_current_user");
+        if (!currentEmail) return;
+
+        const users = JSON.parse(localStorage.getItem("fawmaps_users")) || {};
+        
+        const selectedGames = Array.from(document.querySelectorAll("#group-favorite-games .tag-toggle-btn.active")).map(b => b.getAttribute("data-tag"));
+        const selectedTopics = Array.from(document.querySelectorAll("#group-topics .tag-toggle-btn.active")).map(b => b.getAttribute("data-tag"));
+        const selectedServices = Array.from(document.querySelectorAll("#group-services .tag-toggle-btn.active")).map(b => b.getAttribute("data-tag"));
+
+        users[currentEmail] = {
+          ...users[currentEmail],
+          name: document.getElementById("modal-name-input").value || users[currentEmail].name,
+          bio: document.getElementById("modal-bio-input").value || users[currentEmail].bio,
+          monogram: document.getElementById("modal-monogram-input").value || "АК",
+          avatar: tempAvatarBase64,
+          accent: selectedAccentColor,
+          banner: selectedBannerGradient,
+          games: selectedGames,
+          topics: selectedTopics,
+          services: selectedServices
+        };
+
+        localStorage.setItem("fawmaps_users", JSON.stringify(users));
+        loadUserData(currentEmail);
+        editModal.style.display = "none";
+        alert("Зміни успішно збережено в профілі!");
+      });
+
+      // =========================================================
+      // РЕДАКТОР ТА ПЕРЕГЛЯД КАРТ
+      // =========================================================
+      let currentMapIndex = null;
+      let currentMapImageSrc = "";
+      let categories = [
+        { id: "default", name: "Загальні мітки", color: "#FF5A36", visible: true }
+      ];
+      let selectedCategoryId = "default";
+      let currentMarkerPhotoUrl = "";
+      let markersData = [];
+
+      const mapBgFileInput = document.getElementById("map-bg-file-input");
+      const useDemoMapBtn = document.getElementById("use-demo-map-btn");
+      const activeMapImage = document.getElementById("active-map-image");
+      const editorStepUpload = document.getElementById("editor-step-upload");
+      const editorStepCanvas = document.getElementById("editor-step-canvas");
+      const markersLayer = document.getElementById("markers-layer");
+      const changeBgBtn = document.getElementById("change-bg-btn");
+      const markerPhotoInput = document.getElementById("custom-marker-photo");
+
+      markerPhotoInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            currentMarkerPhotoUrl = ev.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      function resetEditorState() {
+        currentMapIndex = null;
+        markersData = [];
+        markersLayer.innerHTML = "";
+        categories = [
+          { id: "default", name: "Загальні мітки", color: "#FF5A36", visible: true }
+        ];
+        selectedCategoryId = "default";
+        currentMarkerPhotoUrl = "";
+        markerPhotoInput.value = "";
+        document.getElementById("map-title-input").value = "Моя перша карта";
+        renderCategories();
+        resetZoomAndPosition();
+      }
+
+      function openCanvasWithImage(src, title = "Моя карта", savedMarkers = [], savedCats = null, mapIdx = null) {
+        if (mapIdx === null) {
+          resetEditorState();
+        } else {
+          currentMapIndex = mapIdx;
+          document.getElementById("map-title-input").value = title;
+          markersData = savedMarkers;
+          if (savedCats) categories = savedCats;
+        }
+
+        currentMapImageSrc = src;
+        activeMapImage.src = src;
+        editorStepUpload.style.display = "none";
+        editorStepCanvas.style.display = "block";
+        renderCategories();
+        redrawMarkers();
+      }
+
+      mapBgFileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            openCanvasWithImage(ev.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      useDemoMapBtn.addEventListener("click", () => {
+        openCanvasWithImage("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900'><rect width='100%' height='100%' fill='%23C8BD9B'/><circle cx='800' cy='450' r='300' fill='%23E6DEC5' opacity='0.5'/></svg>");
+      });
+
+      if (changeBgBtn) {
+        changeBgBtn.addEventListener("click", () => {
+          openEditorStepUpload();
+        });
+      }
+
+      // Масштабування та переміщення карти в редакторі
+      let scale = 1, posX = 0, posY = 0, isDragging = false, startX = 0, startY = 0;
+      const transformLayer = document.getElementById("map-transform-layer");
+      const zoomIndicator = document.getElementById("zoom-level-indicator");
+      const canvasViewport = document.getElementById("canvas-viewport");
+
+      function updateTransform() {
+        transformLayer.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+        zoomIndicator.textContent = `Масштаб: ${Math.round(scale * 100)}%`;
+      }
+
+      function resetZoomAndPosition() {
+        scale = 1; posX = 0; posY = 0;
+        updateTransform();
+      }
+
+      document.getElementById("zoom-in-btn").addEventListener("click", () => {
+        if (scale < 4) { scale += 0.2; updateTransform(); }
+      });
+      document.getElementById("zoom-out-btn").addEventListener("click", () => {
+        if (scale > 0.4) { scale -= 0.2; updateTransform(); }
+      });
+      document.getElementById("zoom-reset-btn").addEventListener("click", resetZoomAndPosition);
+
+      canvasViewport.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const zoomFactor = e.deltaY < 0 ? 1.1 : 0.9;
+        scale = Math.min(Math.max(0.4, scale * zoomFactor), 4);
+        updateTransform();
+      }, { passive: false });
+
+      canvasViewport.addEventListener("mousedown", (e) => {
+        if (e.button !== 0) return;
+        isDragging = true;
+        canvasViewport.classList.add("grabbing");
+        startX = e.clientX - posX;
+        startY = e.clientY - posY;
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        posX = e.clientX - startX;
+        posY = e.clientY - startY;
+        updateTransform();
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (isDragging) { isDragging = false; canvasViewport.classList.remove("grabbing"); }
+      });
+
+      // Категорії та Легенда (в редакторі)
+      const openAddCatBtn = document.getElementById("open-add-category-btn");
+      const addCatForm = document.getElementById("add-category-form");
+      const saveCatBtn = document.getElementById("save-cat-btn");
+      const newCatNameInput = document.getElementById("new-cat-name");
+      const newCatColorInput = document.getElementById("new-cat-color");
+      const categoriesListContainer = document.getElementById("categories-list-container");
+
+      openAddCatBtn.addEventListener("click", () => {
+        addCatForm.style.display = addCatForm.style.display === "none" ? "block" : "none";
+      });
+
+      saveCatBtn.addEventListener("click", () => {
+        const catName = newCatNameInput.value.trim();
+        if (!catName) { alert("Введіть назву категорії!"); return; }
+        const newId = "cat_" + Date.now();
+        categories.push({ id: newId, name: catName, color: newCatColorInput.value, visible: true });
+        selectedCategoryId = newId;
+        newCatNameInput.value = "";
+        addCatForm.style.display = "none";
+        renderCategories();
+      });
+
+      function renderCategories() {
+        categoriesListContainer.innerHTML = "";
+        categories.forEach(cat => {
+          const item = document.createElement("div");
+          item.className = `category-item ${cat.id === selectedCategoryId ? 'active' : ''}`;
+          item.innerHTML = `
+            <div class="cat-left">
+              <span class="cat-color-dot" style="background: ${cat.color};"></span>
+              <span class="cat-name">${cat.name}</span>
+            </div>
+            <div class="cat-right">
+              <button type="button" class="btn-toggle-eye" title="Показати/Сховати">${cat.visible ? '👁️' : '🙈'}</button>
+              ${categories.length > 1 ? `<button type="button" class="btn-delete-cat" title="Видалити категорію">🗑️</button>` : ''}
+            </div>
+          `;
+
+          item.addEventListener("click", (e) => {
+            if (e.target.classList.contains("btn-toggle-eye") || e.target.classList.contains("btn-delete-cat")) return;
+            selectedCategoryId = cat.id;
+            renderCategories();
+          });
+
+          item.querySelector(".btn-toggle-eye").addEventListener("click", (e) => {
+            e.stopPropagation();
+            cat.visible = !cat.visible;
+            renderCategories();
+            redrawMarkers();
+          });
+
+          const delBtn = item.querySelector(".btn-delete-cat");
+          if (delBtn) {
+            delBtn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              if (confirm(`Видалити категорію "${cat.name}" та всі її мітки?`)) {
+                markersData = markersData.filter(m => m.catId !== cat.id);
+                categories = categories.filter(c => c.id !== cat.id);
+                if (selectedCategoryId === cat.id) selectedCategoryId = categories[0].id;
+                renderCategories();
+                redrawMarkers();
+              }
+            });
+          }
+          categoriesListContainer.appendChild(item);
+        });
+      }
+
+      function redrawMarkers() {
+        markersLayer.innerHTML = "";
+        markersData.forEach((m, idx) => {
+          const cat = categories.find(c => c.id === m.catId);
+          if (cat && !cat.visible) return;
+
+          const pin = document.createElement("div");
+          pin.className = "pin-marker";
+          pin.style.left = `${m.x - 20}px`;
+          pin.style.top = `${m.y - 44}px`;
+          pin.style.color = m.color;
+          pin.title = "Клікніть, щоб видалити мітку";
+
+          pin.innerHTML = `
+            <svg viewBox="0 0 512 512" width="40" height="56" class="pin-svg">
+              <path fill="currentColor" d="M256 0C153.755 0 70.832 82.923 70.832 185.168c0 108.686 137.95 292.052 170.89 323.008 5.79 5.378 14.808 5.378 20.598 0 32.94-30.956 170.89-214.322 170.89-323.008C441.768 82.923 358.245 0 256 0zm0 279.792c-52.274 0-94.624-42.35-94.624-94.624s42.35-94.624 94.624-94.624 94.624 42.35 94.624 94.624-42.35 94.624-94.624 94.624z"/>
+            </svg>
+            <div class="pin-photo-hole">
+              ${m.photo ? `<img src="${m.photo}" class="pin-user-photo">` : `<div class="pin-empty-dot" style="background:${m.color}"></div>`}
+            </div>
+          `;
+
+          pin.addEventListener("click", (ev) => {
+            ev.stopPropagation();
+            if (confirm("Видалити цю мітку?")) {
+              markersData.splice(idx, 1);
+              redrawMarkers();
+            }
+          });
+
+          markersLayer.appendChild(pin);
+        });
+      }
+
+      // Додавання мітки
+      let wasDraggedBeforeClick = false;
+      canvasViewport.addEventListener("mousedown", () => { wasDraggedBeforeClick = false; });
+      window.addEventListener("mousemove", () => { if (isDragging) wasDraggedBeforeClick = true; });
+
+      transformLayer.addEventListener("click", (e) => {
+        if (wasDraggedBeforeClick) return;
+        if (e.target !== activeMapImage && e.target !== transformLayer && e.target !== markersLayer) return;
+
+        const currentCat = categories.find(c => c.id === selectedCategoryId) || categories[0];
+        const rect = transformLayer.getBoundingClientRect();
+        const clickX = (e.clientX - rect.left) / scale;
+        const clickY = (e.clientY - rect.top) / scale;
+
+        markersData.push({
+          x: clickX,
+          y: clickY,
+          color: currentCat.color,
+          photo: currentMarkerPhotoUrl,
+          catId: currentCat.id
+        });
+
+        redrawMarkers();
+      });
+
+      // Збереження карти
+      document.getElementById("publish-map-btn").addEventListener("click", () => {
+        const currentEmail = localStorage.getItem("fawmaps_current_user");
+        if (!currentEmail) {
+          alert("Будь ласка, увійдіть у профіль!");
+          showPage("page-profile");
+          return;
+        }
+
+        const mapTitle = document.getElementById("map-title-input").value || "Моя карта";
+        const userMaps = JSON.parse(localStorage.getItem(`fawmaps_maps_${currentEmail}`)) || [];
+
+        const mapPayload = {
+          title: mapTitle,
+          image: currentMapImageSrc,
+          date: new Date().toLocaleDateString(),
+          markers: markersData,
+          categories: categories
+        };
+
+        if (currentMapIndex !== null) {
+          userMaps[currentMapIndex] = mapPayload;
+        } else {
+          userMaps.push(mapPayload);
+        }
+
+        localStorage.setItem(`fawmaps_maps_${currentEmail}`, JSON.stringify(userMaps));
+        alert("Карту успішно збережено в профілі!");
+        showPage("page-profile");
+        loadUserMaps(currentEmail);
+      });
+
+      // =========================================================
+      // РЕЖИМ ПЕРЕГЛЯДУ КАРТИ (З ЛЕГЕНДОЮ СПРАВА)
+      // =========================================================
+      const viewerTransformLayer = document.getElementById("viewer-transform-layer");
+      const viewerMapImage = document.getElementById("viewer-map-image");
+      const viewerMarkersLayer = document.getElementById("viewer-markers-layer");
+      const viewerViewport = document.getElementById("viewer-viewport");
+      const viewerCategoriesList = document.getElementById("viewer-categories-list");
+
+      let viewerScale = 1, viewerPosX = 0, viewerPosY = 0, viewerIsDragging = false, viewerStartX = 0, viewerStartY = 0;
+      let activeViewerMap = null;
+      let viewerCategoriesState = [];
+
+      function openViewer(mapObj, mapIdx) {
+        activeViewerMap = { ...mapObj, index: mapIdx };
+        document.getElementById("viewer-map-title").textContent = mapObj.title;
+        viewerMapImage.src = mapObj.image;
+
+        // Копіюємо категорійний стан для режиму перегляду
+        viewerCategoriesState = mapObj.categories ? JSON.parse(JSON.stringify(mapObj.categories)) : [
+          { id: "default", name: "Загальні мітки", color: "#FF5A36", visible: true }
+        ];
+
+        renderViewerCategories();
+        redrawViewerMarkers();
+
+        viewerScale = 1; viewerPosX = 0; viewerPosY = 0;
+        viewerTransformLayer.style.transform = "translate(0px, 0px) scale(1)";
+        showPage("page-viewer");
+      }
+
+      function renderViewerCategories() {
+        viewerCategoriesList.innerHTML = "";
+        viewerCategoriesState.forEach(cat => {
+          const item = document.createElement("div");
+          item.className = "category-item";
+          item.innerHTML = `
+            <div class="cat-left">
+              <span class="cat-color-dot" style="background: ${cat.color};"></span>
+              <span class="cat-name">${cat.name}</span>
+            </div>
+            <div class="cat-right">
+              <button type="button" class="btn-toggle-eye" title="Показати/Сховати">${cat.visible ? '👁️' : '🙈'}</button>
+            </div>
+          `;
+
+          const eyeBtn = item.querySelector(".btn-toggle-eye");
+          eyeBtn.addEventListener("click", () => {
+            cat.visible = !cat.visible;
+            eyeBtn.textContent = cat.visible ? '👁️' : '🙈';
+            redrawViewerMarkers();
+          });
+
+          viewerCategoriesList.appendChild(item);
+        });
+      }
+
+      function redrawViewerMarkers() {
+        viewerMarkersLayer.innerHTML = "";
+        if (!activeViewerMap || !activeViewerMap.markers) return;
+
+        activeViewerMap.markers.forEach(m => {
+          const cat = viewerCategoriesState.find(c => c.id === m.catId);
+          if (cat && !cat.visible) return; // Якщо категорія вимкнена в легенді — не показуємо мітку
+
+          const pin = document.createElement("div");
+          pin.className = "pin-marker";
+          pin.style.left = `${m.x - 20}px`;
+          pin.style.top = `${m.y - 44}px`;
+          pin.style.color = m.color;
+          pin.innerHTML = `
+            <svg viewBox="0 0 512 512" width="40" height="56" class="pin-svg">
+              <path fill="currentColor" d="M256 0C153.755 0 70.832 82.923 70.832 185.168c0 108.686 137.95 292.052 170.89 323.008 5.79 5.378 14.808 5.378 20.598 0 32.94-30.956 170.89-214.322 170.89-323.008C441.768 82.923 358.245 0 256 0zm0 279.792c-52.274 0-94.624-42.35-94.624-94.624s42.35-94.624 94.624-94.624 94.624 42.35 94.624 94.624-42.35 94.624-94.624 94.624z"/>
+            </svg>
+            <div class="pin-photo-hole">
+              ${m.photo ? `<img src="${m.photo}" class="pin-user-photo">` : `<div class="pin-empty-dot" style="background:${m.color}"></div>`}
+            </div>
+          `;
+          viewerMarkersLayer.appendChild(pin);
+        });
+      }
+
+      document.getElementById("back-to-profile-from-viewer").addEventListener("click", () => {
+        showPage("page-profile");
+      });
+
+      document.getElementById("open-in-editor-from-viewer").addEventListener("click", () => {
+        if (!activeViewerMap) return;
+        openCanvasWithImage(
+          activeViewerMap.image,
+          activeViewerMap.title,
+          activeViewerMap.markers || [],
+          activeViewerMap.categories || null,
+          activeViewerMap.index
+        );
+        showPage("page-editor");
+      });
+
+      // Переміщення та зум у режимі перегляду
+      viewerViewport.addEventListener("mousedown", (e) => {
+        if (e.button !== 0) return;
+        viewerIsDragging = true;
+        viewerViewport.classList.add("grabbing");
+        viewerStartX = e.clientX - viewerPosX;
+        viewerStartY = e.clientY - viewerPosY;
+      });
+      window.addEventListener("mousemove", (e) => {
+        if (!viewerIsDragging) return;
+        viewerPosX = e.clientX - viewerStartX;
+        viewerPosY = e.clientY - viewerStartY;
+        viewerTransformLayer.style.transform = `translate(${viewerPosX}px, ${viewerPosY}px) scale(${viewerScale})`;
+      });
+      window.addEventListener("mouseup", () => {
+        if (viewerIsDragging) { viewerIsDragging = false; viewerViewport.classList.remove("grabbing"); }
+      });
+      viewerViewport.addEventListener("wheel", (e) => {
+        e.preventDefault();
+        const factor = e.deltaY < 0 ? 1.1 : 0.9;
+        viewerScale = Math.min(Math.max(0.4, viewerScale * factor), 4);
+        viewerTransformLayer.style.transform = `translate(${viewerPosX}px, ${viewerPosY}px) scale(${viewerScale})`;
+      }, { passive: false });
+
+      // Завантаження карток у профіль
+      function loadUserMaps(email) {
+        const container = document.getElementById("user-published-maps-container");
+        if (!container) return;
+
+        const userMaps = JSON.parse(localStorage.getItem(`fawmaps_maps_${email}`)) || [];
+        document.getElementById("stat-maps-count").textContent = userMaps.length;
+
+        if (userMaps.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state-card" id="profile-empty-card">
+              <div class="empty-icon">🗺️</div>
+              <h3>Тут з'являться твої карти</h3>
+              <p>Завантаж зображення світу й почни розміщувати маркери.</p>
+              <button class="btn btn-primary" id="profile-create-first-map-btn">+ Створити першу карту</button>
+            </div>
+          `;
+          document.getElementById("profile-create-first-map-btn").addEventListener("click", () => {
+            resetEditorState();
+            openEditorStepUpload();
+            showPage("page-editor");
+          });
+          return;
+        }
+
+        container.innerHTML = "";
+        userMaps.forEach((map, idx) => {
+          const card = document.createElement("div");
+          card.className = "published-map-card";
+          card.innerHTML = `
+            <div class="map-card-thumb" data-index="${idx}" title="Відкрити режим перегляду">
+              <img src="${map.image}" alt="карта">
+            </div>
+            <div class="map-card-body">
+              <span class="map-card-date">ОПУБЛІКОВАНО • ${map.date}</span>
+              <h4 class="map-title-link" data-index="${idx}">${map.title}</h4>
+              <div class="map-card-actions">
+                <button class="btn btn-secondary view-map-btn" data-index="${idx}" style="font-size:0.75rem; padding:4px 8px;">Перегляд</button>
+                <button class="btn btn-primary edit-map-btn" data-index="${idx}" style="font-size:0.75rem; padding:4px 8px;">Редактор</button>
+                <button class="btn btn-secondary delete-map-btn" data-index="${idx}" style="font-size:0.75rem; padding:4px 8px; background:#FFE5E0; color:#FF5A36; border:none;">Видалити</button>
+              </div>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+
+        container.querySelectorAll(".map-card-thumb, .map-title-link, .view-map-btn").forEach(el => {
+          el.addEventListener("click", (e) => {
+            const idx = e.currentTarget.getAttribute("data-index");
+            openViewer(userMaps[idx], parseInt(idx));
+          });
+        });
+
+        container.querySelectorAll(".edit-map-btn").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            const idx = e.target.getAttribute("data-index");
+            const mapObj = userMaps[idx];
+            openCanvasWithImage(mapObj.image, mapObj.title, mapObj.markers || [], mapObj.categories || null, parseInt(idx));
+            showPage("page-editor");
+          });
+        });
+
+        container.querySelectorAll(".delete-map-btn").forEach(btn => {
+          btn.addEventListener("click", (e) => {
+            const idx = e.target.getAttribute("data-index");
+            if (confirm("Видалити цю карту?")) {
+              userMaps.splice(idx, 1);
+              localStorage.setItem(`fawmaps_maps_${email}`, JSON.stringify(userMaps));
+              loadUserMaps(email);
+            }
+          });
+        });
+      }
+
+      // ВІДГУКИ
+      const reviewForm = document.getElementById("review-submit-form");
+      const reviewMsg = document.getElementById("review-msg");
+      const reviewsList = document.getElementById("dynamic-reviews-list");
+
+      reviewForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = reviewMsg.value.trim();
+        if (!text) return;
+
+        const currentEmail = localStorage.getItem("fawmaps_current_user");
+        const users = JSON.parse(localStorage.getItem("fawmaps_users")) || {};
+        const username = currentEmail && users[currentEmail] ? users[currentEmail].name : "atlas_maker";
+
+        const article = document.createElement("article");
+        article.className = "review-item";
+        article.innerHTML = `
+          <header class="review-header">
+            <span class="user-avatar-sm">${username.substring(0,2).toUpperCase()}</span>
+            <div><strong>${username}</strong><time>Щойно</time></div>
+          </header>
+          <div class="stars">★★★★★</div>
+          <p>${text}</p>
+        `;
+        reviewsList.prepend(article);
+        reviewMsg.value = "";
+        alert("Відгук успішно опубліковано локально!");
+      });
+    });
+  </script>
+</body>
+</html>
